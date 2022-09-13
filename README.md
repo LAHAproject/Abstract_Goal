@@ -9,4 +9,4 @@ This code accompines the paper [Predicting the Next Action by Modeling the Abstr
 This research/project is supported in part by the National Research Foundation, Singapore under its AI Singapore Program (AISG Award No: AISG2-RP-2020-016) and the National Research Foundation Singapore under its AI Singapore Program (Award Number: AISG-RP-2019-010).
 
   
-In case of issues, please write to roy_debaditya
+In case of issues, please write to debadityaroy at gmail dot com
