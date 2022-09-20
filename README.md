@@ -25,16 +25,20 @@ This code accompines the paper [Predicting the Next Action by Modeling the Abstr
     * ```--ant_sec, choices=[2, 1.75, 1.5, 1.25, 1, 0.75, 0.5, 0.25], 'Choose anticipation time' - (1 for EK55 and EK100, 0.5 for EGTEA)```
     * ```--latent_dim, default=128, 'Choose latent dimension for observed and next goal distribution'```
     * ```--num_act_cand, default=10, 'Choose number of candidates to sample for next verb/noun' ```
-parser.add_argument('--num_goal_cand', type=int, default=1, help='Choose number of abstract goals to sample- 1, 2, 3, 4, 5')
-parser.add_argument('--hidden_dim', type=int, default=256, help='Choose hidden dimension')
-parser.add_argument('--n_layers', type=int, default=1, choices=[1, 2, 3], help='Choose # layers in RNN for next visual feature - 1, 2, 3')
-parser.add_argument('--dropout', type=float, default=0.8, help="Dropout rate")
-parser.add_argument('--sampling', type=int, default=6, choices=[1, 2, 3, 5, 6, 10, 15], help='Choose sampling freq of input features, 2, 3, 5, 6, 10, 15')
-parser.add_argument('--nepochs', type=int, default=10, help='Choose num epochs')
-parser.add_argument('--scheduler', type=str, default='none', choices=['cosine', 'none'], help='Choose scheduler - cosineLR or none(AdamW)')
-parser.add_argument('--batch_size', type=int, default=256, choices=[32, 64, 128, 256], help='Choose batch_size - 64, 128, 256')
-parser.add_argument('--losses', nargs='+', choices=['og', 'na', 'ng', 'oa', 'gc', 'futmse', 'futce'], help='' )
-
+    *```--num_goal_cand, default=3, 'Choose number of abstract goals to sample'```
+    *```--hidden_dim, type=int, default=256, 'Choose hidden dimension for RNN'```
+    *```--n_layers, default=1, help='Choose # layers in RNN for next visual feature```
+    *```--dropout, default=0.8, 'Dropout rate'```
+    *```--sampling, default=10, 'Choose sampling freq of input features' (10 means 30 fps/10 = 3fps)```
+    *```--nepochs, default=10, 'Choose number of training epochs'```
+    *```--scheduler, default='none', choices=['cosine', 'none'], 'Choose scheduler - cosineLR or none (for AdamW optimizer)'```
+    *```--batch_size, default=256, choices=[32, 64, 128, 256], 'Choose batch_size'```
+    *```--losses', choices=[og', 'na', 'ng', 'oa', 'gc'], 'Choose losses'``` 
+      * ```og - KLD for observed goal```
+      * ```na - CE for next action(required)```
+      * ```ng - KLD for next goal(required)```
+      * ```oa - CE for observed action```
+      * ```gc - symmetric KLD between observed and next goal```
 
 
 
