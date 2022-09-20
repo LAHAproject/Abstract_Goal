@@ -18,13 +18,13 @@ This code accompines the paper [Predicting the Next Action by Modeling the Abstr
   
   ``` python main.py  --modality rgb --dataset ek55 --outputs verb --obs_sec 2 --ant_sec 1.0  --latent_dim 128 --num_act_cand 10 --num_goal_cand 3  --hidden_dim 256 --n_layers 1 --nepochs 15 --losses og na ng oa gc --scheduler none --batch_size 256 --sampling 10 ```
   * Explanation of options
-    * ```--modality, choices=['rgb', 'flow', 'obj' ] - 'Choose tsn (rgb or flow) or obj or a combination for fusion' ```
-    * ```--dataset, choices=['ek55', 'ek100', 'egtea'] - 'Choose between EK55, EK100 and EGTEA' ```
-    * ```--outputs, choices=['verb', 'noun', 'act'] - Choose between verb or noun (for all datasets) or act (only for EGTEA)```
-    * ```--obs_sec, choices=[1, 2, 3, 4, 5, 6] - 'Choose observed duration in secs 1-6'```
-parser.add_argument('--ant_sec',dest='ant_sec', type=float, default=1, choices=[2, 1.75, 1.5, 1.25, 1, 0.75, 0.5, 0.25], help='Choose anticipation time')
-parser.add_argument('--latent_dim', type=int, default=128, help='Choose latent dimension')
-parser.add_argument('--num_act_cand', type=int, default=10, help='Choose number of candidates to sample for next verb/noun- 10, 20, 30, 50, 100')
+    * ```--modality, choices=['rgb', 'flow', 'obj' ], 'Choose tsn (rgb or flow) or obj or a combination for fusion' ```
+    * ```--dataset, choices=['ek55', 'ek100', 'egtea'], 'Choose between EK55, EK100 and EGTEA' ```
+    * ```--outputs, choices=['verb', 'noun', 'act'], Choose between verb or noun (for all datasets) or act (only for EGTEA)```
+    * ```--obs_sec, default=2, 'Choose observed duration in secs 1-6'```
+    * ```--ant_sec, choices=[2, 1.75, 1.5, 1.25, 1, 0.75, 0.5, 0.25], 'Choose anticipation time' - (1 for EK55 and EK100, 0.5 for EGTEA)```
+    * ```--latent_dim, default=128, 'Choose latent dimension for observed and next goal distribution'```
+    * ```--num_act_cand, default=10, 'Choose number of candidates to sample for next verb/noun' ```
 parser.add_argument('--num_goal_cand', type=int, default=1, help='Choose number of abstract goals to sample- 1, 2, 3, 4, 5')
 parser.add_argument('--hidden_dim', type=int, default=256, help='Choose hidden dimension')
 parser.add_argument('--n_layers', type=int, default=1, choices=[1, 2, 3], help='Choose # layers in RNN for next visual feature - 1, 2, 3')
