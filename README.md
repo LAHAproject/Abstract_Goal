@@ -2,7 +2,7 @@
 Variational modeling of abstract goal for next action anticipation
 
 * This code accompines the paper [Predicting the Next Action by Modeling the Abstract Goal](https://arxiv.org/abs/2209.05044)
-* Best results on EK55 by a large margin - See https://competitions.codalab.org/competitions/20071#results (username: royd, team name: IHPC-AISG-LAHA)
+* Ranked 1 on EK55 by a large margin - See https://competitions.codalab.org/competitions/20071#results (username: royd, team name: IHPC-AISG-LAHA)
 * 2nd on EK100 action and noun and 3rd on verb on Unseen Kitchens - See https://codalab.lisn.upsaclay.fr/competitions/702#results (username: latent, team name: IHPC-AISG-LAHA)
 * Best results on EGTEA, see paper
 
