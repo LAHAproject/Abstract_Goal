@@ -7,8 +7,8 @@ This code accompines the paper [Predicting the Next Action by Modeling the Abstr
 
   * Download RGB, Flow and OBJ features from [RULSTM](https://github.com/fpv-iplab/rulstm) project, specifically this script
     https://github.com/fpv-iplab/rulstm/blob/master/RULSTM/scripts/download_data_ek55.sh
-    The data is now in <pwd>/data/ek55/<rgb><flow><obj>. 
-  * Download EK55 [annotations](https://github.com/fpv-iplab/rulstm/tree/master/RULSTM/data/ek55) and suppose you save in <annot>
+    The data is now in ```<pwd>/data/ek55/<rgb><flow><obj>```
+  * Download EK55 [annotations](https://github.com/fpv-iplab/rulstm/tree/master/RULSTM/data/ek55) and suppose you save in ```<annot>```
   * Change the path of the following variables in ```main.py```
     * ```train_ann_file = '<annot>/data/ek55/training.csv'```
     * ```val_ann_file = '<annot>/data/ek55/validation.csv'```
