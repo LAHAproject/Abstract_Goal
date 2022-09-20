@@ -20,7 +20,7 @@ This code accompines the paper [Predicting the Next Action by Modeling the Abstr
   * Example, train a verb model with RGB features
   
   ``` python main.py  --modality rgb --dataset ek55 --outputs verb --obs_sec 2 --ant_sec 1.0  --latent_dim 128 --num_act_cand 10 --num_goal_cand 3  --hidden_dim 256 --n_layers 1 --nepochs 15 --losses og na ng oa gc --scheduler none --batch_size 256 --sampling 10 ```
-  * Explanation of options
+  * Explanation of training options
     * ```--modality, choices=['rgb', 'flow', 'obj' ], 'Choose tsn (rgb or flow) or obj or a combination for fusion' ```
     * ```--dataset, choices=['ek55', 'ek100', 'egtea'], 'Choose between EK55, EK100 and EGTEA' ```
     * ```--outputs, choices=['verb', 'noun', 'act'], Choose between verb or noun (for all datasets) or act (only for EGTEA)```
@@ -48,6 +48,16 @@ This code accompines the paper [Predicting the Next Action by Modeling the Abstr
   * Train all the 6 models - 3 for verb using RGB, Flow and Obj and 3 for noun using RGB, Flow and Obj
     * ```hidden_dim=256``` for verb models and  ```hidden_dim=1024``` for noun models
   * Run main.py as follows
+    ```python main.py  --verb_fusion --verb_modes rgb flow obj --verb_weights 0.45 0.45 0.1 --noun_fusion --noun_modes rgb flow obj --noun_weights 0.45 0.1 0.45 --dataset ek55 --obs_sec 2 --ant_sec 1.0  --num_act_cand 10 --num_goal_cand 3 --n_layers 1 --losses og na ng oa gc --scheduler none --batch_size 256 --sampling 10 --challenge```
+  * Exaplanation of challenge options
+    * ```--challenge, 'Generate json on test set'```
+    * ```--verb_fusion, 'Late fusion for verb'```
+    * ```--verb_modes, choices=['rgb', 'flow', 'obj'], 'Modality models for verb'```
+    * ```--verb_weights, 'Late fusion weights for model outputs in the order of verb_modes (best - 0.45, 0.45, 0.1)'```
+    * ```--noun_fusion, 'Late fusion for noun')```
+    * ```--noun_modes, choices=['rgb', 'flow', 'obj'], 'Modality models for noun'```
+    * ```--noun_weights, 'Late fusion weights for model outputs in the order of verb_modes (best - 0.45, 0.1, 0.45)'```
+
 
 
 
