@@ -5,12 +5,18 @@ This code accompines the paper [Predicting the Next Action by Modeling the Abstr
 
 # Features
 
-  Download RGB, Flow and OBJ features from [RULSTM](https://github.com/fpv-iplab/rulstm) project, specifically this script
+  * Download RGB, Flow and OBJ features from [RULSTM](https://github.com/fpv-iplab/rulstm) project, specifically this script
+    https://github.com/fpv-iplab/rulstm/blob/master/RULSTM/scripts/download_data_ek55.sh
+    The data is now in <pwd>/data/ek55/<rgb><flow><obj>. 
+  * Download EK55 [annotations](https://github.com/fpv-iplab/rulstm/tree/master/RULSTM/data/ek55) and suppose you save in <annot>
+  * Change the path of the following variables in ```main.py```
+    train_ann_file = '<annot>/data/ek55/training.csv'
+    val_ann_file = '<annot>/data/ek55/validation.csv'
+    test_ann_files = ['<annot>/data/ek55/test_seen.csv', '<annot>/data/ek55/test_unseen.csv']
 
-  https://github.com/fpv-iplab/rulstm/blob/master/RULSTM/scripts/download_data_ek55.sh
-
-
-  The data is now in <pwd>/data/ek55/<rgb><flow><obj>. Next, fetch the *training.csv* and *validation.csv* from the RULSTM project [ek55 directory](https://github.com/fpv-iplab/rulstm/tree/master/RULSTM/data/ek55)
+    paths = { 'rgb': '<pwd>/data/ek55/rgb', \
+          'flow': '<pwd>/data/ek55/flow', \
+          'obj': '<pwd>/data/ek55/obj'}
 
 # Training
   * We train two models - one for verb and another for noun using each feature RGB/FLOW/OBJ to get 6 models.
@@ -40,22 +46,11 @@ This code accompines the paper [Predicting the Next Action by Modeling the Abstr
       * ```oa - CE for observed action```
       * ```gc - symmetric KLD between observed and next goal```
 
-
-
-* Testing on test set
+# Testing on test set
   
-  * Fetch the *test_seen.csv* and *test_unseen.csv* from the RULSTM project [ek55 directory](https://github.com/fpv-iplab/rulstm/tree/master/RULSTM/data/ek55)
-  
-  * The CSV format is different in *training.csv* and *test_seen.csv*. For *training.csv*, the columns are - ```segment_id, video_id, start_frame, end_frame, verb, noun, action``` For *test_seen/unseen.csv*, the columns are - ```segment_id, video_id, start_frame, end_frame```
-  
-  * We need to train 2 models - one with RGB features as above and another with OBJ features
-    Download OBJ features from [RULSTM](https://github.com/fpv-iplab/rulstm) project, specifically this script
-    ```
-    mkdir -p data/ek55/obj
-    curl https://iplab.dmi.unict.it/sharing/rulstm/features/obj/data.mdb -o data/ek55/obj/data.mdb
-    ```
-    The data is now in <pwd>/data/ek55/obj. 
-
+  * Train all the 6 models - 3 for verb using RGB, Flow and Obj and 3 for noun using RGB, Flow and Obj
+    * ```hidden_dim=256``` for verb models and  ```hidden_dim=1024``` for noun models
+  * Run main.py as follows
 
 
 
