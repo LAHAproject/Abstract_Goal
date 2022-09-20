@@ -25,15 +25,15 @@ This code accompines the paper [Predicting the Next Action by Modeling the Abstr
     * ```--ant_sec, choices=[2, 1.75, 1.5, 1.25, 1, 0.75, 0.5, 0.25], 'Choose anticipation time' - (1 for EK55 and EK100, 0.5 for EGTEA)```
     * ```--latent_dim, default=128, 'Choose latent dimension for observed and next goal distribution'```
     * ```--num_act_cand, default=10, 'Choose number of candidates to sample for next verb/noun' ```
-    *```--num_goal_cand, default=3, 'Choose number of abstract goals to sample'```
-    *```--hidden_dim, type=int, default=256, 'Choose hidden dimension for RNN'```
-    *```--n_layers, default=1, help='Choose # layers in RNN for next visual feature```
-    *```--dropout, default=0.8, 'Dropout rate'```
-    *```--sampling, default=10, 'Choose sampling freq of input features' (10 means 30 fps/10 = 3fps)```
-    *```--nepochs, default=10, 'Choose number of training epochs'```
-    *```--scheduler, default='none', choices=['cosine', 'none'], 'Choose scheduler - cosineLR or none (for AdamW optimizer)'```
-    *```--batch_size, default=256, choices=[32, 64, 128, 256], 'Choose batch_size'```
-    *```--losses', choices=[og', 'na', 'ng', 'oa', 'gc'], 'Choose losses'``` 
+    * ```--num_goal_cand, default=3, 'Choose number of abstract goals to sample'```
+    * ```--hidden_dim, type=int, default=256, 'Choose hidden dimension for RNN'```
+    * ```--n_layers, default=1, help='Choose # layers in RNN for next visual feature```
+    * ```--dropout, default=0.8, 'Dropout rate'```
+    * ```--sampling, default=10, 'Choose sampling freq of input features' (10 means 30 fps/10 = 3fps)```
+    * ```--nepochs, default=10, 'Choose number of training epochs'```
+    * ```--scheduler, default='none', choices=['cosine', 'none'], 'Choose scheduler - cosineLR or none (for AdamW optimizer)'```
+    * ```--batch_size, default=256, choices=[32, 64, 128, 256], 'Choose batch_size'```
+    * ```--losses', choices=[og', 'na', 'ng', 'oa', 'gc'], 'Choose losses'``` 
       * ```og - KLD for observed goal```
       * ```na - CE for next action(required)```
       * ```ng - KLD for next goal(required)```
