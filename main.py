@@ -50,7 +50,7 @@ from evaluation import challengeeval, validate
 
 
 parser = argparse.ArgumentParser(description='Variational Latent Goal model for EK55 and EK100', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-parser.add_argument('--modality', nargs='+', default=None, choices=['rgb', 'flow', 'obj' ], help='Choose tsn (rgb or flow) or obj or vit features or a combination for fusion', required=True)
+parser.add_argument('--modality', nargs='+', default=None, choices=['rgb', 'flow', 'obj' ], help='Choose tsn (rgb or flow) or obj or a combination for fusion', required=True)
 parser.add_argument('--dataset', type=str, default='ek55', choices=['ek55', 'ek100', 'egtea'], help='Choose between EK55, EK100 and EGTEA')
 parser.add_argument('--outputs', nargs='+', choices=['verb', 'noun', 'action', 'act'], help='Choose between verb and noun or act for EGTEA')
 parser.add_argument('--obs_sec',dest='obs_sec', type=int, default=2, choices=[1, 2, 3, 4, 5, 6], help='Choose observed duration in secs 1-6')
@@ -81,11 +81,11 @@ parser.add_argument('--validate', dest='validation', action='store_true', help='
 parser.add_argument('--challenge', dest='challenge', action='store_true', help='Generate json on test set')
 
 parser.add_argument('--verb_fusion', action='store_true', help='Late fusion for verb')
-parser.add_argument('--verb_modes', nargs='+', choices=['rgb', 'flow', 'obj', 'vit'], help='')
+parser.add_argument('--verb_modes', nargs='+', choices=['rgb', 'flow', 'obj'], help='')
 parser.add_argument('--verb_weights', nargs='+', help='')
 
 parser.add_argument('--noun_fusion', action='store_true', help='Late fusion for noun')
-parser.add_argument('--noun_modes', nargs='+', choices=['rgb', 'flow', 'obj', 'vit'], help='')
+parser.add_argument('--noun_modes', nargs='+', choices=['rgb', 'flow', 'obj'], help='')
 parser.add_argument('--noun_weights', nargs='+', help='')
 # Debugging True
 parser.add_argument('--debug_on', action='store_true', help='')
@@ -108,8 +108,7 @@ if args.dataset == 'ek55':
     
     paths = { 'rgb': '/home/roy/epic_rgb_full_features', \
           'flow': '/data/Datasets/EPIC-KITCHENS_55/epic_flow_full_features', \
-          'obj': '/home/roy/epic_bagofobj_full_features',\
-          'vit': '/data/Datasets/EPIC-KITCHENS_55/epic_ViT_features'}
+          'obj': '/home/roy/epic_bagofobj_full_features'}
     
     json_files = ['seen.json', 'unseen.json']
     
@@ -138,7 +137,7 @@ if args.dataset == 'egtea':
               'flow': '/home/roy/EGTEA/TSN-C_3_egtea_action_CE_s{:s}_flow_model_best_fcfull_hd'.format(args.split)}    
  
     
-dim_dict = {'rgb': 1024, 'flow': 1024, 'obj': 352, 'vit': 1024, 'i3d': 2048}
+dim_dict = {'rgb': 1024, 'flow': 1024, 'obj': 352}
 
 
 if args.challenge: # Can take 2 or more inputs (late_fusion). Produces verb or noun
