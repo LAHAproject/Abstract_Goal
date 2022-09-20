@@ -10,13 +10,10 @@ This code accompines the paper [Predicting the Next Action by Modeling the Abstr
     The data is now in <pwd>/data/ek55/<rgb><flow><obj>. 
   * Download EK55 [annotations](https://github.com/fpv-iplab/rulstm/tree/master/RULSTM/data/ek55) and suppose you save in <annot>
   * Change the path of the following variables in ```main.py```
-    train_ann_file = '<annot>/data/ek55/training.csv'
-    val_ann_file = '<annot>/data/ek55/validation.csv'
-    test_ann_files = ['<annot>/data/ek55/test_seen.csv', '<annot>/data/ek55/test_unseen.csv']
-
-    paths = { 'rgb': '<pwd>/data/ek55/rgb', \
-          'flow': '<pwd>/data/ek55/flow', \
-          'obj': '<pwd>/data/ek55/obj'}
+    * ```train_ann_file = '<annot>/data/ek55/training.csv'```
+    * ```val_ann_file = '<annot>/data/ek55/validation.csv'
+    * ```test_ann_files = ['<annot>/data/ek55/test_seen.csv', '<annot>/data/ek55/test_unseen.csv']```
+    * ```paths = { 'rgb': '<pwd>/data/ek55/rgb', 'flow': '<pwd>/data/ek55/flow', 'obj': '<pwd>/data/ek55/obj'}```
 
 # Training
   * We train two models - one for verb and another for noun using each feature RGB/FLOW/OBJ to get 6 models.
