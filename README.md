@@ -3,8 +3,17 @@ Variational modeling of abstract goal for next action anticipation
 
 * This code accompines the paper [Predicting the Next Action by Modeling the Abstract Goal](https://arxiv.org/abs/2209.05044)
 * **Ranked 1 on EK55** by a large margin - See https://competitions.codalab.org/competitions/20071#results (username: royd, team name: IHPC-AISG-LAHA)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/predicting-the-next-action-by-modeling-the/action-anticipation-on-epic-kitchens-55-seen)](https://paperswithcode.com/sota/action-anticipation-on-epic-kitchens-55-seen?p=predicting-the-next-action-by-modeling-the)
+	
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/predicting-the-next-action-by-modeling-the/action-anticipation-on-epic-kitchens-55-1)](https://paperswithcode.com/sota/action-anticipation-on-epic-kitchens-55-1?p=predicting-the-next-action-by-modeling-the)
 * **Ranked 2 on EK100 action and noun and 3rd on verb on Unseen Kitchens** - See https://codalab.lisn.upsaclay.fr/competitions/702#results (username: latent, team name: IHPC-AISG-LAHA)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/predicting-the-next-action-by-modeling-the/action-anticipation-on-epic-kitchens-100-test)](https://paperswithcode.com/sota/action-anticipation-on-epic-kitchens-100-test?p=predicting-the-next-action-by-modeling-the)
 * Best results on EGTEA, see paper
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/predicting-the-next-action-by-modeling-the/action-anticipation-on-egtea)](https://paperswithcode.com/sota/action-anticipation-on-egtea?p=predicting-the-next-action-by-modeling-the)
+	
+
+	
+
 
 # Features
 
