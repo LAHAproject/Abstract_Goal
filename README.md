@@ -71,7 +71,16 @@ Variational modeling of abstract goal for next action anticipation
     * ```--noun_weights, 'Late fusion weights for model outputs in the order of verb_modes (best - 0.45, 0.1, 0.45)'```
 
 
-
+# Citation
+If you find this code useful and use it in your project, please cite this work
+```
+@article{roy2022predicting,
+  title={Predicting the Next Action by Modeling the Abstract Goal},
+  author={Roy, Debaditya and Fernando, Basura},
+  journal={arXiv preprint arXiv:2209.05044},
+  year={2022}
+}
+```
 
 # Acknowledgment
 
