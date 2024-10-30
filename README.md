@@ -80,6 +80,16 @@ If you find this code useful and use it in your project, please cite this work
   journal={arXiv preprint arXiv:2209.05044},
   year={2022}
 }
+
+@inproceedings{roy2022predicting,
+  title={Predicting the Next Action by Modeling the Abstract Goal},
+  author={Roy, Debaditya and Fernando, Basura},
+  booktitle={ICPR},
+  year={2024}
+}
+
+Predicting the Next Action by Modeling the Abstract Goal
+
 ```
 
 # Acknowledgment
