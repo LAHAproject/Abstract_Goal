@@ -88,7 +88,7 @@ If you find this code useful and use it in your project, please cite this work
   year={2024}
 }
 
-Predicting the Next Action by Modeling the Abstract Goal
+
 
 ```
 
